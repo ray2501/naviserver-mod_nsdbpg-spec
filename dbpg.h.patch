@@ -1,0 +1,20 @@
+--- dbpg.h.orig	2022-05-19 10:49:34.866031442 +0800
++++ dbpg.h	2022-05-19 10:48:56.841973641 +0800
+@@ -44,7 +44,7 @@
+  * pg_config.h. However, the PACKAGE_* macros conflict with
+  * NaviServer's packaging information, so we drop these.
+  */
+-#include <pg_config.h>
++#include <pgsql/pg_config.h>
+ #undef PACKAGE_VERSION
+ #undef PACKAGE_TARNAME
+ #undef PACKAGE_STRING
+@@ -53,7 +53,7 @@
+ #undef PACKAGE_URL
+ 
+ #include <nsdb.h>
+-#include <libpq-fe.h>
++#include <pgsql/libpq-fe.h>
+ 
+ /*
+  * The following structure maintains per handle data
