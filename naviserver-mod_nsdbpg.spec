@@ -16,6 +16,7 @@ BuildRequires: make
 BuildRequires: gcc
 BuildRequires: postgresql-devel
 BuildRequires: naviserver
+BuildRequires: naviserver-devel
 Requires:      tcl >= 8.6
 Requires:      naviserver
 BuildRoot:     %{buildroot}
