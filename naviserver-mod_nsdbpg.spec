@@ -10,7 +10,6 @@ Release:       1
 License:       MPL-2.0
 Group:         Productivity/Networking/Web/Servers
 Source:        %{packagename}.tar.gz
-Patch0:        makefile.patch
 URL:           https://sourceforge.net/projects/naviserver/
 BuildRequires: make
 BuildRequires: gcc
@@ -26,14 +25,13 @@ This module provides a straightforward database services driver for NaviServer.
 
 %prep
 %setup -q -n %{packagename}
-%patch 0
 
 %build
-make 
+make NAVISERVER=/var/lib/naviserver PGLIB=/usr/%{_lib} PGINCLUDE=/usr/include/pgsql
 
 %install
 mkdir -p %{buildroot}/var/lib/naviserver/bin
-make DESTDIR=%{buildroot} install
+make DESTDIR=%{buildroot} NAVISERVER=/var/lib/naviserver install
 
 %clean
 rm -rf %buildroot

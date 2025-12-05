@@ -9,7 +9,6 @@ if {[file exists build]} {
 
 file mkdir build/BUILD build/RPMS build/SOURCES build/SPECS build/SRPMS
 file copy -force $base.tar.gz build/SOURCES
-file copy -force makefile.patch build/SOURCES
 
 set buildit [list rpmbuild --target $arch --define "_topdir [pwd]/build" -bb naviserver-mod_nsdbpg.spec]
 exec >@stdout 2>@stderr {*}$buildit
