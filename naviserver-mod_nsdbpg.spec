@@ -5,7 +5,7 @@
 
 Name:          naviserver-mod_nsdbpg
 Summary:       NaviServer nsdbpg module
-Version:       2.9
+Version:       2.10
 Release:       1
 License:       MPL-2.0
 Group:         Productivity/Networking/Web/Servers
